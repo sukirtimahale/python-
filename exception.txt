@@ -1,0 +1,168 @@
+1. Write a Python program to handle a ZeroDivisionError exception when dividing 
+a number by zero.
+
+try:
+    numerator = float(input("Enter the numerator: "))
+    denominator = float(input("Enter the denominator: "))
+    result = numerator / denominator
+    print(f"The result is: {result}")
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a Python program that prompts the user to input an integer and raises a
+ValueError exception if the input is not a valid integer.
+
+try:
+    user_input = input("Enter an integer: ")
+    number = int(user_input)  # Convert the input to an integer
+    print(f"You entered a valid integer: {number}")
+except ValueError:
+    print("Error: That is not a valid integer!")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.create a program to accept choice from user and perform the operation according
+
+# Function demonstrating basic try-except
+def try_except():
+    try:
+        # Asking the user for input and trying to convert it to an integer
+        num = int(input("Enter a number: "))
+        print(f"You entered: {num}")
+    except ValueError:
+        # Handles the case where input is not a valid integer
+        print("That's not a valid number!")
+
+# Function demonstrating try with multiple except blocks
+def try_multiple_except():
+    try:
+        # Asking the user for a number and performing a division
+        num = int(input("Enter a number: "))
+        result = 10 / num  # Division operation
+        print(f"Result: {result}")
+    except ValueError:
+        # Handles invalid input (not a number)
+        print("Invalid input, not a number!")
+    except ZeroDivisionError:
+        # Handles division by zero error
+        print("Cannot divide by zero!")
+
+# Function demonstrating try-except with else
+def try_except_else():
+    try:
+        # Asking for a number
+        num = int(input("Enter a number: "))
+    except ValueError:
+        # Catches invalid input
+        print("That's not a number!")
+    else:
+        # Executes if no exception occurred
+        print(f"Good job! You entered: {num}")
+
+# Function demonstrating try-finally
+def try_finally():
+    try:
+        # Asking for a number
+        num = int(input("Enter a number: "))
+        print(f"You entered: {num}")
+    except ValueError:
+        # Handles invalid input
+        print("That's not a valid number!")
+    finally:
+        # This block always runs, regardless of an exception
+        print("This block runs no matter what.")
+
+# Function demonstrating a single general except block
+def try_single_except():
+    try:
+        # Trying to get an integer input
+        num = int(input("Enter a number: "))
+        print(f"You entered: {num}")
+    except:
+        # Catches any kind of exception
+        print("Something went wrong!")
+
+# Function demonstrating raising an exception
+def raising_exception():
+    try:
+        # Asking for a positive number
+        num = int(input("Enter a positive number: "))
+        if num < 0:
+            # Raise an exception if the number is negative
+            raise ValueError("Negative number is not allowed!")
+        print(f"You entered: {num}")
+    except ValueError as e:
+        # Handles the raised exception and displays the message
+        print(f"Error: {e}")
+
+# Main function with a menu for user to choose the demo
+def main():
+    while True:
+        # Display menu options
+        print("\nChoose an option:")
+        print("1. Try except")
+        print("2. Try multiple except")
+        print("3. Try except else")
+        print("4. Try finally")
+        print("5. Try single except")
+        print("6. Raising exception")
+        print("7. Exit")
+        
+        # Getting user choice
+        choice = input("Enter your choice (1-7): ")
+
+        # Perform action based on user choice
+        if choice == "1":
+            try_except()
+        elif choice == "2":
+            try_multiple_except()
+        elif choice == "3":
+            try_except_else()
+        elif choice == "4":
+            try_finally()
+        elif choice == "5":
+            try_single_except()
+        elif choice == "6":
+            raising_exception()
+        elif choice == "7":
+            # Exit the program
+            print("Goodbye!")
+            break
+        else:
+            # Handle invalid menu choice
+            print("Invalid choice, try again.")
+
+# Run the main program
+main()
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a Python program that prompts the user to input two numbers and raises a
+TypeError exception if the inputs are not numerical
+
+def input_numbers():
+    try:
+        # Prompting the user to input two numbers
+        num1 = input("Enter the first number: ")
+        num2 = input("Enter the second number: ")
+
+        # Check if the inputs are numerical
+        if not num1.replace('.', '', 1).isdigit() or not num2.replace('.', '', 1).isdigit():
+            raise TypeError("Both inputs must be numerical values.")
+
+        # Convert inputs to floats and display them
+        num1 = float(num1)
+        num2 = float(num2)
+        print(f"The numbers you entered are: {num1} and {num2}")
+    except TypeError as e:
+        # Handle the raised TypeError and display the error message
+        print(f"Error: {e}")
+
+# Run the function
+input_numbers()
+
+
+
+

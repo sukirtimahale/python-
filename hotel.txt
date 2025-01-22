@@ -1,0 +1,100 @@
+def take_order():
+    order = []
+    total_cost = 0
+    choice = 0
+    menu_prices = {
+        1: {"name": "Starters", "price": 500, "options": {"1": "Soup", "2": "Salad", "3": "Spring Rolls"}},
+        2: {"name": "Main Course", "price": 1100, "options": {"1": "Steak", "2": "Pasta", "3": "Chicken Curry"}},
+        3: {"name": "Desserts", "price": 400, "options": {"1": "Cake", "2": "Ice Cream", "3": "Fruit Salad"}},
+        4: {"name": "Drinks", "price": 250, "options": {"1": "Soda", "2": "Water", "3": "Juice"}}
+    }
+
+    # Using a while loop to continuously take orders until the user chooses to exit
+    while True:
+        print("\n1: Starters (₹500)")
+        print("2: Main Course (₹1,100)")
+        print("3: Desserts (₹400)")
+        print("4: Drinks (₹250)")
+        print("5: Exit")
+
+        # Taking user input for their choice
+        choice = int(input("Please enter the number of the item you'd like to order (or '5' to exit): "))
+
+        if choice == 1:
+            print("Choose a Starter:")
+            for key, value in menu_prices[1]["options"].items():
+                print(f"{key}: {value}")
+            starter_choice = int(input("Enter the number of your choice: "))
+            if starter_choice in [1, 2, 3]:
+                order.append(menu_prices[1]["options"][str(starter_choice)])
+                total_cost += menu_prices[1]["price"]
+                print(
+                    f"{menu_prices[1]['options'][str(starter_choice)]} added to your order. Total so far: ₹{total_cost:.2f}")
+            else:
+                print("Invalid choice.")
+
+        elif choice == 2:
+            print("Choose a Main Course:")
+            for key, value in menu_prices[2]["options"].items():
+                print(f"{key}: {value}")
+            main_course_choice = int(input("Enter the number of your choice: "))
+            if main_course_choice in [1, 2, 3]:
+                order.append(menu_prices[2]["options"][str(main_course_choice)])
+                total_cost += menu_prices[2]["price"]
+                print(
+                    f"{menu_prices[2]['options'][str(main_course_choice)]} added to your order. Total so far: ₹{total_cost:.2f}")
+            else:
+                print("Invalid choice.")
+
+        elif choice == 3:
+            print("Choose a Dessert:")
+            for key, value in menu_prices[3]["options"].items():
+                print(f"{key}: {value}")
+            dessert_choice = int(input("Enter the number of your choice: "))
+            if dessert_choice in [1, 2, 3]:
+                order.append(menu_prices[3]["options"][str(dessert_choice)])
+                total_cost += menu_prices[3]["price"]
+                print(
+                    f"{menu_prices[3]['options'][str(dessert_choice)]} added to your order. Total so far: ₹{total_cost:.2f}")
+            else:
+                print("Invalid choice.")
+
+        elif choice == 4:
+            print("Choose a Drink:")
+            for key, value in menu_prices[4]["options"].items():
+                print(f"{key}: {value}")
+            drink_choice = int(input("Enter the number of your choice: "))
+            if drink_choice in [1, 2, 3]:
+                order.append(menu_prices[4]["options"][str(drink_choice)])
+                total_cost += menu_prices[4]["price"]
+                print(
+                    f"{menu_prices[4]['options'][str(drink_choice)]} added to your order. Total so far: ₹{total_cost:.2f}")
+            else:
+                print("Invalid choice.")
+
+        elif choice == 5:
+            print("Exiting the ordering system.")
+            break
+        else:
+            print("Invalid choice, please choose a valid option.")
+
+    return order, total_cost
+
+
+def main():
+    print("Welcome to the hotel!")
+    order, total_cost = take_order()
+
+    if order:
+        print("\nYour order includes:")
+        for item in order:
+            print(f"- {item}")
+        print(f"\nTotal amount: ₹{total_cost:.2f}")
+    else:
+        print("No items ordered.")
+
+    print("Thank you for ordering at the hotel!")
+
+
+if __name__ == "__main__":
+    main()

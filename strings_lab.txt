@@ -1,0 +1,88 @@
+1. Write a Python program to count the occurrences of each word in a given sentence string = “To change the overall look of your document. To change the look available in the gallery” 
+
+# Take input from the user
+sentence = input("Enter a sentence: ")
+
+# Convert the sentence to lowercase to make the counting case-insensitive
+sentence = sentence.lower()
+
+# Manually remove punctuation from the sentence
+punctuation = '''!()-[]{};:'",<>./?@#$%^&*_~'''
+sentence = ''.join(char for char in sentence if char not in punctuation)
+
+# Split the sentence into words
+words = sentence.split()
+
+# Create a dictionary to store word counts
+word_count = {}
+
+# Count occurrences of each word
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+# Print the word counts
+for word, count in word_count.items():
+    print(f"'{word}': {count}")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a Python program to remove a newline in Python String = "\nBest \nDeeptech \nPython \nTraining\n" 
+
+# Take multi-line input from the user using a loop
+print("Enter a string (press Enter twice to end input):")
+input_string = ""
+while True:
+    line = input()
+    if line == "":  # End input when the user presses Enter on an empty line
+        break
+    input_string += line + "\n"  # Add the line to the input string with a newline
+
+# Remove all newlines using replace
+cleaned_string = input_string.replace("\n", " ")
+
+# Print the result
+print("String after removing newlines:", cleaned_string)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a Python program to reverse words in a string String = “Deeptech Python Training” 
+
+# Taking input from the user
+string = input("Enter a string: ")
+
+# Splitting the string into words
+words = string.split()
+
+# Reversing the order of words and joining them back into a string
+reversed_words = ' '.join(words[::-1])
+
+# Output the result
+print("Reversed words:", reversed_words)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a Python program to count and display the vowels of a given text String=”Welcome to python Training”
+
+# Taking input from the user
+text = input("Enter a string: ")
+
+# Defining the vowels
+vowels = "aeiouAEIOU"
+
+# Initialize a dictionary to store the count of each vowel
+vowel_count = {v: 0 for v in vowels}
+
+# Loop through each character in the text
+for char in text:
+    if char in vowels:
+        vowel_count[char] += 1
+
+# Displaying the count of vowels
+print("Vowel counts:")
+for vowel, count in vowel_count.items():
+    if count > 0:
+        print(f"{vowel}: {count}")
+

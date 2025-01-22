@@ -1,0 +1,104 @@
+1. Write a Python program to sum all the items in a list.
+
+# Taking a list input from the user (comma-separated values)
+user_input = input("Enter numbers separated by commas: ")
+
+# Converting the input string to a list of integers
+numbers = list(map(int, user_input.split(',')))
+
+# Summing all the items in the list
+total_sum = sum(numbers)
+
+# Displaying the result
+print("The sum of all items in the list is:", total_sum)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a Python program to get the largest and smallest number from a list without builtin functions.
+
+# Taking a list input from the user (comma-separated values)
+user_input = input("Enter numbers separated by commas: ")
+
+# Converting the input string to a list of integers
+numbers = list(map(int, user_input.split(',')))
+
+# Initializing the largest and smallest variables with the first element of the list
+largest = smallest = numbers[0]
+
+# Looping through the list to find the largest and smallest numbers
+for num in numbers:
+    if num > largest:
+        largest = num
+    if num < smallest:
+        smallest = num
+
+# Displaying the result
+print("The largest number in the list is:", largest)
+print("The smallest number in the list is:", smallest)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a Python program to find duplicate values from a list and display those.
+
+# Taking a list input from the user (comma-separated values)
+user_input = input("Enter numbers separated by commas: ")
+
+# Converting the input string to a list of integers
+numbers = list(map(int, user_input.split(',')))
+
+# Initializing a dictionary to keep track of the count of each number
+count_dict = {}
+
+# Looping through the list to count the occurrences of each number
+for num in numbers:
+    if num in count_dict:
+        count_dict[num] += 1
+    else:
+        count_dict[num] = 1
+
+# Finding and displaying the duplicate values
+duplicates = [num for num, count in count_dict.items() if count > 1]
+
+if duplicates:
+    print("Duplicate values:", duplicates)
+else:
+    print("No duplicates found.")
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+4.
+
+# Taking a list input from the user (comma-separated values)
+user_input = input("Enter a list of numbers separated by commas: ")
+
+# Converting the input string to a list of integers
+numbers = list(map(int, user_input.split(',')))
+
+# Taking the length of the first part as input from the user
+first_part_length = int(input("Enter the length of the first part of the list: "))
+
+# Splitting the list into two parts
+first_part = numbers[:first_part_length]
+second_part = numbers[first_part_length:]
+
+# Displaying the results
+print("Original list:", numbers)
+print(f"Length of the first part of the list: {first_part_length}")
+print("Splitted the said list into two parts:")
+print("First part:", first_part)
+print("Second part:", second_part)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Write a Python program to traverse a given list in reverse order, and print the elements with the original index.
+
+# Taking a list input from the user (comma-separated values)
+user_input = input("Enter a list of elements separated by commas: ")
+
+# Converting the input string to a list
+elements = user_input.split(',')
+
+# Traversing the list in reverse order
+for i in range(len(elements) - 1, -1, -1):
+    print(f"Original index: {i}, Element: {elements[i]}")
+
+

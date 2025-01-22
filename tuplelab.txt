@@ -1,0 +1,76 @@
+1. Write a Python program to find the number of times 4 appears in the tuple.
+
+# Taking the number to search from the user
+search_num = int(input("Enter the number you want to search in the tuple: "))
+
+# Taking tuple input from the user
+user_input = input("Enter a tuple of numbers(comma seprated): ")
+
+# Converting the string input into a tuple
+user_tuple = eval(user_input)
+
+# Counting the number of times the user-provided number appears in the tuple
+count_of_number = user_tuple.count(search_num)
+
+# Displaying the result
+print(f"The number {search_num} appears {count_of_number} times in the tuple.")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Write a Python program to convert a list to a tuple.
+
+# Taking a list input from the user
+user_input = input("Enter a list of numbers (comma seprated): ")
+
+# Converting the string input into a list
+user_list = eval(user_input)
+
+# Converting the list to a tuple
+user_tuple = tuple(user_list)
+
+# Displaying the tuple
+print(f"The converted tuple is:",user_tuple)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a Python program to calculate the sum of the numbers in a given tuple
+
+# Taking a tuple input from the user
+user_input = input("Enter a tuple of numbers (comma seprated): ")
+
+# Converting the string input into a tuple
+user_tuple = eval(user_input)
+
+# Calculating the sum of the numbers in the tuple
+tuple_sum = sum(user_tuple)
+
+# Displaying the result
+print(f"The sum of the numbers in the tuple is:",tuple_sum)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.Write a python program and iterate the given tuples
+
+# Create an empty list to store employee tuples
+employees = []
+
+# Number of employees to be entered
+num_employees = int(input("Enter the number of employees: "))
+
+# Taking input from the user for each employee
+for _ in range(num_employees):
+    name = input("Enter employee name: ")
+    employee_id = int(input("Enter employee ID: "))
+    department = input("Enter employee department: ")
+    salary = float(input("Enter employee salary: "))
+    
+    # Create the employee tuple and add it to the employees list
+    employee = (name, employee_id, department, salary)
+    employees.append(employee)
+
+# Iterating over the list of employee tuples and printing their details
+print("\nEmployee Details:")
+for employee in employees:
+    for detail in employee:
+        print(detail)
+    print("-" * 20)  # To separate each employee's details

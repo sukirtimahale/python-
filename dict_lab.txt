@@ -1,0 +1,85 @@
+1. Write a Python program and calculate the mean of the below dictionary.Accept student anme as key and in value accept marks
+
+# Program to calculate the mean of marks in a dictionary
+
+# Initialize an empty dictionary to store student names and marks
+studMarks = {}
+
+# Number of students to input
+num_students = int(input("Enter the number of students: "))
+
+# Input student names and their marks
+for i in range(num_students):
+    name = input("Enter the student's name: ")
+    marks = float(input(f"Enter marks for {name}: "))
+    studMarks[name] = marks
+
+# Calculate the mean of the marks
+if studMarks:  # Check if the dictionary is not empty
+    total_marks = sum(studMarks.values())
+    mean_marks = total_marks / len(studMarks)
+    print(f"\nThe mean of the marks is: {mean_marks:.2f}")
+else:
+    print("\nNo students were entered.")
+
+# Display the student names and marks
+print("\nStudent Marks:")
+for name, marks in studMarks.items():
+    print(f"{name}: {marks}")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Write a Python script to concatenate the following dictionaries to create a new one.
+Sample Dictionary :
+dic1={1:10, 2:20}dic2={3:30, 4:40}dic3={5:50,6:60} Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+# Define the sample dictionaries
+dic1 = {1: 10, 2: 20}
+dic2 = {3: 30, 4: 40}
+dic3 = {5: 50, 6: 60}
+
+# Concatenate the dictionaries
+result = {}
+for d in (dic1, dic2, dic3):
+    result.update(d)
+
+# Print the result
+print("Expected Result:", result)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a Python program to get the key, value and item in a dictionary.Accept the input as a employee details. 
+name,no, ID, dep , des,DOJ, DOB, salary
+
+# Program to accept employee details and display keys, values, and items
+
+# Initialize an empty dictionary to store employee details
+employee_details = {}
+
+# Input employee details
+employee_details["Name"] = input("Enter the employee's name: ")
+employee_details["Number"] = input("Enter the employee's number: ")
+employee_details["ID"] = input("Enter the employee's ID: ")
+employee_details["Department"] = input("Enter the employee's department: ")
+employee_details["Designation"] = input("Enter the employee's designation: ")
+employee_details["DOJ"] = input("Enter the employee's Date of Joining (DOJ): ")
+employee_details["DOB"] = input("Enter the employee's Date of Birth (DOB): ")
+employee_details["Salary"] = float(input("Enter the employee's salary: "))
+
+# Display the keys
+print("\nKeys in the dictionary:")
+for key in employee_details.keys():
+    print(key)
+
+# Display the values
+print("\nValues in the dictionary:")
+for value in employee_details.values():
+    print(value)
+
+# Display the items (key-value pairs)
+print("\nItems in the dictionary:")
+for key, value in employee_details.items():
+    print(f"{key}: {value}")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

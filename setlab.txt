@@ -1,0 +1,72 @@
+1. Write a Python program to Get Only unique items from two sets.
+
+# Take input for two sets from the user
+set1 = set(map(int, input("Enter the elements of the first set (separated by spaces): ").split()))
+set2 = set(map(int, input("Enter the elements of the second set (separated by spaces): ").split()))
+
+# Get unique items using symmetric difference
+unique_items = set1 ^ set2
+
+# Print the result
+print("Unique items:", unique_items)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a Python program to Return a set of elements present in Set A or B, but
+not both.
+
+# Take input for two sets from the user as space-separated values
+setA_input = input("Enter the elements of set A (separated by spaces): ").split()
+setB_input = input("Enter the elements of set B (separated by spaces): ").split()
+
+# Convert the input lists to sets of integers
+setA = set([int(item) for item in setA_input])
+setB = set([int(item) for item in setB_input])
+
+# Get elements present in Set A or Set B, but not both (symmetric difference)
+result = setA ^ setB
+
+# Print the result
+print("Elements present in set A or B, but not both:", result)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a Python program to Check if two sets have any elements in common. If
+yes, display the common elements.
+
+# Take input for two sets from the user as space-separated values
+setA = input("Enter the elements of set A (separated by spaces): ").split()
+setB = input("Enter the elements of set B (separated by spaces): ").split()
+
+# Convert the input lists to sets
+setA = set(setA)
+setB = set(setB)
+
+# Find common elements using intersection
+common_elements = setA & setB
+
+# Check if there are common elements and display the result
+if common_elements:
+    print("Common elements:", common_elements)
+else:
+    print("No common elements found.")
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a Python program to Remove items from set1 that are not common to
+both set1 and set2
+
+# Take input for two sets from the user
+set1_input = input("Enter the elements of set1 (separated by spaces): ").split()
+set2_input = input("Enter the elements of set2 (separated by spaces): ").split()
+
+# Convert the input lists to sets of integers
+set1 = set([int(item) for item in set1_input])
+set2 = set([int(item) for item in set2_input])
+
+# Remove items from set1 that are not common to both set1 and set2 (intersection)
+set1 &= set2
+
+# Print the updated set1
+print("Updated set1 (common elements with set2):", set1)
+
